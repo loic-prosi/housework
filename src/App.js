@@ -1,33 +1,35 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import database from "services/firebase/database";
+import moment from "moment";
+import "./App.css";
 
 const App = () => {
-  const [, setData] = useState([]);
+  const [data, setData] = useState([]);
+  const [, setWeek] = useState();
 
   useEffect(() => {
-    database.on("value", snapshot => {
-      setData(snapshot.val());
-    });
+    const week = moment().locale("fr").week();
+    setWeek(week);
+    database
+      .orderByChild("week")
+      .startAt(week)
+      .endAt(week + 8)
+      .on("value", snapshot => {
+        const dataKeys = Object.keys(snapshot.val());
+        const data = dataKeys.map(_k => {
+          return snapshot.val()[_k];
+        });
+        setData(data);
+      });
   }, []);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {data && data.length !== 0
+        ? data.map(_i => {
+            return <p>{_i.name}</p>;
+          })
+        : "no data"}
     </div>
   );
 };
