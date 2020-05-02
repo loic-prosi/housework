@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import database from "services/firebase/database";
 
 const App = () => {
+  const [, setData] = useState([]);
+
+  useEffect(() => {
+    database.on("value", snapshot => {
+      setData(snapshot.val());
+    });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
