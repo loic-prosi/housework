@@ -8,12 +8,12 @@ const App = () => {
   const [, setWeek] = useState();
 
   useEffect(() => {
-    const week = moment().locale("fr").week();
-    setWeek(week);
+    const currentWeek = moment().locale("fr").week();
+    setWeek(currentWeek);
     database
       .orderByChild("week")
-      .startAt(week)
-      .endAt(week + 8)
+      .startAt(currentWeek)
+      .endAt(currentWeek + 8)
       .on("value", snapshot => {
         const dataKeys = Object.keys(snapshot.val());
         const data = dataKeys.map(_k => {
