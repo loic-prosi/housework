@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import database from "services/firebase/database";
 import moment from "moment";
-import "./App.css";
+import CardList from "components/CardList";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -25,11 +25,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {data && data.length !== 0
-        ? data.map(_i => {
-            return <p>{_i.name}</p>;
-          })
-        : "no data"}
+      <CardList data={data} />
     </div>
   );
 };
