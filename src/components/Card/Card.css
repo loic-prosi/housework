@@ -1,6 +1,39 @@
 .card {
+  display: flex;
   padding: 15px;
   border-radius: 4px;
   margin-bottom: 25px;
+  background-color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.card__letter {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  background-color: #2e6cb5;
+  font-size: 2.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  text-align: left;
+}
+
+.card__name {
+  font-size: 1.4em;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0 0 10px;
+}
+
+.card__period {
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: bolder;
+  margin: 0;
 }

@@ -3,7 +3,8 @@ import moment from "moment";
 import "moment/locale/fr";
 
 const Card = props => {
-  let { name, week } = props;
+  let { id, name, week } = props;
+  const letter = name[0];
 
   const startDate = moment().week(week).startOf("isoWeek").format("D MMMM");
   const endDate = moment()
@@ -17,11 +18,14 @@ const Card = props => {
   }
 
   return (
-    <div className="card">
-      <h2>{name}</h2>
-      <h3>
-        {startDate} - {endDate}
-      </h3>
+    <div className={`card card-${id}`}>
+      <div className="card__letter">{letter}</div>
+      <div className="card__info">
+        <h2 className="card__name">{name}</h2>
+        <p className="card__period">
+          {startDate} - {endDate}
+        </p>
+      </div>
     </div>
   );
 };
