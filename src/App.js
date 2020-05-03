@@ -25,8 +25,6 @@ const App = () => {
         const data = dataKeys.map(_k => {
           return snapshot.val()[_k];
         });
-        console.log(data);
-
         setData(data);
       });
   }, []);
