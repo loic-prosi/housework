@@ -1,0 +1,47 @@
+.card {
+  display: flex;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16) inset,
+    0 3px 6px rgba(0, 0, 0, 0.23) inset;
+}
+
+.card-1 > .card__letter {
+  background-image: url("../../assets/cleaning.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.card__letter {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  background-color: #2e6cb5;
+  font-size: 2.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.card__name {
+  font-size: 1.3em;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0 0 10px;
+}
+
+.card__period {
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: bolder;
+  margin: 0;
+}
