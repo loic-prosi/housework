@@ -1,0 +1,13 @@
+.loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: content-box no-repeat center url("../../assets/cleaning2.gif");
+}
+
+.loading__message {
+  color: white;
+  font-size: 1.5em;
+  transform: translateY(65px);
+}

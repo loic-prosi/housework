@@ -3,6 +3,7 @@ import database from "services/firebase/database";
 import moment from "moment";
 import "moment/locale/fr";
 import CardList from "components/CardList";
+import Loading from "components/Loading";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -31,7 +32,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <CardList data={data} />
+      {data && data.length !== 0 ? <CardList data={data} /> : <Loading />}
     </div>
   );
 };

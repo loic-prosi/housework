@@ -9,7 +9,7 @@
 }
 
 .card-1 > .card__letter {
-  background-image: url("../../assets/cleaning.gif") !important;
+  background-image: url("../../assets/cleaning.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
@@ -30,12 +30,12 @@
 .card__info {
   display: flex;
   flex-direction: column;
-  margin-left: 15px;
+  margin-left: 20px;
   text-align: left;
 }
 
 .card__name {
-  font-size: 1.4em;
+  font-size: 1.3em;
   color: rgba(0, 0, 0, 0.85);
   margin: 0 0 10px;
 }
