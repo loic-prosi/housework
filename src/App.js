@@ -30,11 +30,7 @@ const App = () => {
       });
   }, []);
 
-  return (
-    <div className="App">
-      {data && data.length !== 0 ? <CardList data={data} /> : <Loading />}
-    </div>
-  );
+  return data && data.length !== 0 ? <CardList data={data} /> : <Loading />;
 };
 
 export default App;
