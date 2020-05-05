@@ -4,6 +4,7 @@ import moment from "moment";
 import "moment/locale/fr";
 import CardList from "components/CardList";
 import Loading from "components/Loading";
+const { version } = require("../package.json");
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -30,7 +31,14 @@ const App = () => {
       });
   }, []);
 
-  return data && data.length !== 0 ? <CardList data={data} /> : <Loading />;
+  return data && data.length !== 0 ? (
+    <div className="app">
+      <CardList data={data} />
+      <footer className="app__footer">{version}</footer>
+    </div>
+  ) : (
+    <Loading />
+  );
 };
 
 export default App;
