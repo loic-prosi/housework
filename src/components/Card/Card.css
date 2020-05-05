@@ -4,8 +4,8 @@
   border-radius: 4px;
   margin-bottom: 25px;
   background-color: white;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16) inset,
-    0 3px 6px rgba(0, 0, 0, 0.23) inset;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12) inset,
+    0 1px 2px rgba(0, 0, 0, 0.24) inset;
 }
 
 .card-1 > .card__letter {
@@ -37,7 +37,7 @@
 .card__name {
   font-size: 1.3em;
   color: rgba(0, 0, 0, 0.85);
-  margin: 0 0 10px;
+  margin: 3px 0 7px;
 }
 
 .card__period {
