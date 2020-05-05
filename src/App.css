@@ -1,0 +1,12 @@
+.app {
+  position: relative;
+  min-height: 100vh !important;
+}
+
+.app__footer {
+  position: absolute;
+  bottom: 15px;
+  color: white;
+  width: 100%;
+  text-align: center;
+}

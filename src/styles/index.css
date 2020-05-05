@@ -1,5 +1,7 @@
 @import "./main.css";
 
+@import "../App.css";
+
 @import "../components/Card/Card.css";
 @import "../components/CardList/CardList.css";
 @import "../components/Loading/Loading.css";
